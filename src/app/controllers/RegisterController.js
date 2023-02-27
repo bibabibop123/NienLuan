@@ -1,4 +1,4 @@
-const Course = require('../models/Course');
+const userModel = require('../models/user');
 
 class RegisterController {
     async register ( req, res, next) {
@@ -6,7 +6,14 @@ class RegisterController {
     }
 
     async registerUser(req,res,next){
-        res.send(req.body);
+        const {firstName,lastName,username,password,email,phoneNumber,address} = req.body ;
+        const userExist = await userModel.findOne({username});
+        console.log(userExist);
+        if(userExist){
+            res.send({message:'Người dùng đã tồn tại'})
+        }
+        await userModel.create({...req.body});
+        res.redirect('/login');
     }
 }
 
