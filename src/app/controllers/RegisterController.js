@@ -6,12 +6,12 @@ class RegisterController {
         res.render('register');
     }
 
-    async registerUser(req,res,next){
-        const {username} = req.body ;
-        const userExist = await userModel.findOne({username});
+    async registerAction(req,res,next){
+        const {email} = req.body ;
+        const userExist = await userModel.findOne({email});
         if(userExist){
             req.flash('message', 'Người dùng đã tồn tại')
-            res.redirect('/register');
+            return res.redirect('/register');
         }
         await userModel.create({...req.body});
         req.flash('message', 'Đăng ký thành công !!!')

@@ -1,4 +1,4 @@
-const Course = require('../models/Course');
+const UserModel = require('../models/user');
 const USERNAME ='admin@gmail.com';
 const PASSWORD ='admin';
 class LoginController {
@@ -8,12 +8,16 @@ class LoginController {
     async loginAction(req,res){
         const {username,password} = req.body;
         console.log(username,password);
-        if(username==USERNAME && password==PASSWORD){
-            res.redirect('/courses/list');
+        const userExist = await UserModel.find({username});
+        if(!userExist){
+            req.flash('message', 'Tên người dùng không tồn tại !!!');
+            return res.redirect('/login');
         }
-        else{
-            res.redirect('/login');
+        if(userExist.password != password){
+            req.flash('message', 'Mật khẩu không đúng !!!');
+            return res.redirect('/login');
         }
+        res.redirect('/courses/list');
     }
 }
 
