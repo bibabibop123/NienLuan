@@ -22,6 +22,11 @@ app.use(methodOverride('_method'));
 app.use(morgan('combined'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(
+  bodyParser.urlencoded({
+      extended: true,
+  }),
+);
 
 // Template engine
 app.engine('hbs', engine({ 
@@ -33,15 +38,12 @@ app.engine('hbs', engine({
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
+
 const Course = require('./app/models/Course');
 
 route(app);
 
-app.use(
-  bodyParser.urlencoded({
-      extended: true,
-  }),
-);
+
 app.use(bodyParser.json());
 
 app.get('/', async (req, res, next) => {
