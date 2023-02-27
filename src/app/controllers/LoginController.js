@@ -15,6 +15,7 @@ class LoginController {
             return res.redirect('/login');
         }
         req.flash('message', 'Đăng nhập thành công !!!');
+        req.session.user = userExist;
         return res.redirect('/');
     }
 }
