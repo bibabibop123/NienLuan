@@ -3,6 +3,7 @@ const { engine } = require("express-handlebars");
 const morgan = require("morgan");
 const methodOverride = require("method-override");
 const session = require("express-session");
+const flash = require('connect-flash');
 const path = require("path");
 const app = express();
 const port = 3000;
@@ -31,6 +32,14 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(flash());
+app.use((req,res,next)=>{
+  const message = req.flash('message');
+  if(message){
+    res.locals.message= message
+  }
+  next();
+})
 app.use(
   bodyParser.urlencoded({
     extended: true,
