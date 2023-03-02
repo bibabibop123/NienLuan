@@ -166,15 +166,53 @@ p {
 .capture2 {
   height: 300px; }
 
+.cart {
+  background-color: red;
+  height: 500px;
+  width: 90%;
+  margin-top: 30px;
+  margin-left: 5%; }
+
+.cart .img-cart {
+  background-color: #01e37f;
+  width: 100%;
+  height: 60px;
+  float: left; }
+
+.cart .name-cart {
+  background-color: #3c3451;
+  width: 100%;
+  height: 60px;
+  float: left; }
+
+.cart .number-cart {
+  background-color: #9be010;
+  width: 100%;
+  height: 60px;
+  float: left; }
+
+.cart .total-cart {
+  background-color: #f093fb;
+  width: 100%;
+  height: 60px;
+  float: left; }
+
+.cart .delete-cart {
+  background-color: #ff3f40;
+  width: 100%;
+  height: 60px;
+  float: left; }
+
 footer {
   background-color: black;
-  height: 200px;
+  height: 120px;
   font-size: 17px; }
 
 footer .row {
-  width: 100%; }
+  width: 100%;
+  height: 100px; }
 
-i {
+footer i {
   color: white; }
 
 /* ----- Variables ----- */
@@ -449,3 +487,44 @@ form .bord {
   font-weight: bold;
   font-size: 30px;
   margin-top: 40px; }
+
+table {
+  width: 100%;
+  margin-bottom: 20px; }
+  table th {
+    text-align: center;
+    padding: 0;
+    height: 20px; }
+  table .cart-product {
+    margin-top: 20px; }
+    table .cart-product .cart-img {
+      width: 18%; }
+      table .cart-product .cart-img img {
+        height: 100%; }
+    table .cart-product .cart-detail {
+      width: 30%; }
+    table .cart-product .cart-price {
+      width: 13%;
+      text-align: center; }
+    table .cart-product .cart-number {
+      width: 13%; }
+      table .cart-product .cart-number input {
+        width: 70px;
+        margin-left: 30%; }
+    table .cart-product .cart-rm {
+      width: 13%; }
+      table .cart-product .cart-rm button {
+        width: 70px;
+        margin-left: 30%; }
+    table .cart-product .cart-total {
+      width: 13%;
+      text-align: center; }
+  table .total-price td {
+    padding-top: 50px;
+    padding-left: 30px; }
+
+.cart-shopping {
+  width: 100px;
+  height: 50px;
+  margin-bottom: 30px;
+  margin-left: 30px; }
