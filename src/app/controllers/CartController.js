@@ -3,18 +3,19 @@ const Course = require('../models/Course');
 class CartController {
     async cart ( req, res, next) {
         const cart = req.session.cart || [];
-        console.log(cart);
-        res.render('cart');
+        let total = 0;
+        cart.forEach(element => {
+            total += element.price * element.quality;
+        });
+        res.render('cart',{cart:cart,total:total});
     }
     async addCart(req,res,next){
         const id = req.params.id;
         const product = await Course.findById(id);
-        console.log('product',product);
         if(!product){
             return res.redirect('/');
         }
         const cart = req.session.cart || [];
-        console.log(cart);
         
         const cartExist = cart.find((item)=>item.id ===id);
         if(cartExist){
@@ -31,7 +32,9 @@ class CartController {
                 id: product._id,
                 image:product.img,
                 name: product.name_content,
-                quality:1
+                price: Number( product.total.replace(',','').replace('.','').replace('.','').replace('.','')),
+                quality:1,
+                description:product.detail
             })
             req.session.cart = cart;
         }

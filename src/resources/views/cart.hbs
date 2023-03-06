@@ -1,9 +1,9 @@
 {{!-- <div class="cart">
-    <div class="img-cart col-5">SẢN PHẨM</div>
-    <div class="name-cart col-2">SỐ LƯỢNG</div>
-    <div class="number-cart col-2">SỐ TIỀN</div>
-    <div class="total-cart col-3">THAO TÁC</div>
-    
+  <div class="img-cart col-5">SẢN PHẨM</div>
+  <div class="name-cart col-2">SỐ LƯỢNG</div>
+  <div class="number-cart col-2">SỐ TIỀN</div>
+  <div class="total-cart col-3">THAO TÁC</div>
+
 </div> --}}
 
 {{!-- <div class="shopping-cart">
@@ -23,7 +23,8 @@
     </div>
     <div class="product-details col-2">
       <div class="product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
-      <p class="product-description">Who doesn't like lamb and rice? We've all hit the halal cart at 3am while quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
+      <p class="product-description">Who doesn't like lamb and rice? We've all hit the halal cart at 3am while
+        quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
     </div>
     <div class="product-price col-2">45.99</div>
     <div class="product-quantity col-2">
@@ -55,62 +56,46 @@
       <div class="totals-value" id="cart-total">90.57</div>
     </div>
   </div>
-      
-      <button class="checkout">Checkout</button>
+
+  <button class="checkout">Checkout</button>
 
 </div> --}}
 
 <table>
-    <tr class="cart-title">
-        <th class="cart-img">Hình ảnh</th>
-        <th class="cart-detail">Mô tả</th>
-        <th class="cart-price">Gía tiền</th>
-        <th class="cart-number">Số lượng</th>
-        <th class="cart-rm">Xóa bỏ</th>
-        <th class="cart-total">Tổng tiền</th>
-    </tr>
+  <tr class="cart-title">
+    <th class="cart-img">Hình ảnh</th>
+    <th class="cart-detail">Mô tả</th>
+    <th class="cart-price">Gía tiền</th>
+    <th class="cart-number">Số lượng</th>
+    <th class="cart-rm">Xóa bỏ</th>
+    <th class="cart-total">Tổng tiền</th>
+  </tr>
+  {{#each cart}}
     <tr class="cart-product justify-content: center">
-        <td class="cart-img">
-            <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
-        </td>
-        <td class="cart-detail">
-            <p>Who doesn't like lamb and rice? We've all hit the halal cart at 3am while quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
-        </td>
-        <td class="cart-price">5000000</td>
-        <td class="cart-number">
-            <input type="number" value="1" min="1">
-        </td>
-        <td class="cart-rm">
-            <button class="remove-product">
-                Remove
-            </button>
-        </td>
-        <td class="cart-total"></td>
+      <td class="cart-img">
+        <img src="{{this.image}}">
+      </td>
+      <td class="cart-detail">
+        <p>{{this.description}}</p>
+      </td>
+      <td class="cart-price">{{this.price}}</td>
+      <td class="cart-number">
+        <input type="number" value="1" min="1">
+      </td>
+      <td class="cart-rm">
+        <button class="remove-product">
+          Remove
+        </button>
+      </td>
+      <td class="cart-total"></td>
     </tr>
-        <tr class="cart-product justify-content: center">
-        <td class="cart-img">
-            <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png">
-        </td>
-        <td class="cart-detail">
-            <p>Who doesn't like lamb and rice? We've all hit the halal cart at 3am while quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
-        </td>
-        <td class="cart-price">5000000</td>
-        <td class="cart-number">
-            <input type="number" value="1" min="1">
-        </td>
-        <td class="cart-rm">
-            <button class="remove-product">
-                Remove
-            </button>
-        </td>
-        <td class="cart-total"></td>
-    </tr>
-    <tr class="total-price">
-        <td colspan="6">
-            <p>Tổng tiền:</p>
-            <p>Phí ship:15000</p>
-            <p>Tổng đơn hàng:</p>
-        </td>
-    </tr>
+  {{/each}}
+  <tr class="total-price">
+    <td colspan="6">
+      <p>Tổng tiền: {{total}}</p>
+      <p>Phí ship:15000</p>
+      <p>Tổng đơn hàng: {{total}}</p>
+    </td>
+  </tr>
 </table>
 <button class="cart-shopping">ĐẶT HÀNG</button>
