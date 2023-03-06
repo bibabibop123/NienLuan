@@ -27,7 +27,7 @@ class CartController {
             })
             req.session.cart = cart;
         }
-        res.send('hello');
+        res.send('hello, phong nguyen');
     }
 
     async removeCart(req,res){}
