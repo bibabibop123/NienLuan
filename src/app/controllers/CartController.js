@@ -42,7 +42,16 @@ class CartController {
         return res.redirect(`/detail/${product.name_content}`)
     }
 
-    async removeCart(req,res){}
+    async removeCart(req,res){
+        const cart = req.session.cart || [];
+        const id = req.params.id;
+        const newCart = cart.filter((item)=>{
+            return item.id !=id;
+        })
+        req.session.cart = newCart;
+        req.flash('message', ' Xóa thành công !!!');
+        return res.redirect(`/cart`)
+    }
 }
 
 module.exports = new CartController;
