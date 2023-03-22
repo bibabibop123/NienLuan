@@ -3,6 +3,7 @@ const Course = require('../models/Course');
 class CartController {
     async cart ( req, res, next) {
         const cart = req.session.cart || [];
+        console.log('cart',cart);
         let total = 0;
         cart.forEach(element => {
             total += element.price * element.quality;
@@ -32,7 +33,7 @@ class CartController {
                 id: product._id,
                 image:product.img,
                 name: product.name_content,
-                price: Number( product.total.replace(',','').replace('.','').replace('.','').replace('.','')),
+                price: Number(product.total.replace(',','').replace('.','').replace('.','').replace('.','')),
                 quality:1,
                 description:product.detail
             })
@@ -50,6 +51,36 @@ class CartController {
         })
         req.session.cart = newCart;
         req.flash('message', ' Xóa thành công !!!');
+        return res.redirect(`/cart`)
+    }
+
+    async incrementCart(req,res){
+        const cart = req.session.cart || [];
+        const id = req.params.id;
+        console.log('cart',cart);
+        const newCart = cart.map((item)=>{
+            if(item.id == id){
+                return {...item,quality:item.quality+1}
+            }
+            return item;
+        })
+        req.session.cart = newCart;
+        return res.redirect(`/cart`)
+    }
+
+    async decrementCart(req,res){
+        const cart = req.session.cart || [];
+        const id = req.params.id;
+        console.log('cart',cart);
+        const newCart = cart.map((item)=>{
+            if(item.id == id){
+                if(item.quality >1){
+                    return {...item,quality:item.quality-1}
+                }
+            }
+            return item;
+        })
+        req.session.cart = newCart;
         return res.redirect(`/cart`)
     }
 }
