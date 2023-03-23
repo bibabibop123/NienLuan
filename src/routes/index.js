@@ -6,6 +6,7 @@ const creatRouter = require('./creat');
 const loginRouter = require('./login');
 const registerRouter = require('./register');
 const cartRouter = require('./cart');
+const paymentRouter = require('./payment');
 // const editRouter = require('./edit');
 
 
@@ -18,6 +19,7 @@ function route(app) {
     app.use('/login', loginRouter);
     app.use('/register', registerRouter);
     app.use('/cart', cartRouter);
+    app.use('/payment', paymentRouter);
     // app.use('/update', updateRouter);
     // app.use('/edit', editRouter);
     // app.use('/', siteRouter)

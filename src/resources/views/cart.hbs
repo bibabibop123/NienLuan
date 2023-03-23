@@ -80,12 +80,8 @@
       </td>
       <td class="cart-price">{{this.price}}</td>
       <td class="cart-number">
-        <div style="display: flex;justify-content: center;">
-          <form action="/cart/decrement/{{this.id}}" method="post"><input type="submit"  value="-" style="max-width: 30px;"/></form>
-          <input type="number" value="{{this.quality}}"  style="max-width: 30px; margin-left: 10%" readonly="true">
-          <form action="/cart/increment/{{this.id}}" method="post"><input type="submit"  value="+"  style="max-width: 30px;"/></form>
-          
-        </div>
+        <button>+</button>
+        
       </td>
       <td class="cart-rm">
         <a href="/cart/remove-cart/{{this.id}}">
@@ -105,4 +101,6 @@
     </td>
   </tr>
 </table>
-<button class="cart-shopping">ĐẶT HÀNG</button>
+      <form action="/payment/">
+         <button type="submit" class="cart-shopping">Tiến hành thanh toán</button>
+      </form>
