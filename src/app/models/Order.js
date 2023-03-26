@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { makeId } = require('../../common/text.helper');
 const { PaymentStatus, PaymentMethod } = require('../../config/enum.config');
 const Schema = mongoose.Schema;
 
@@ -11,7 +12,7 @@ const Order = new Schema({
     paymentMethod: { type: String,
     enum: PaymentMethod},
     products: [{ type: Object}],
-    total: { type: String},
+    total: { type: Number},
     user: {type: mongoose.Types.ObjectId, ref: "user"},
     status:{
       type:String,
@@ -20,6 +21,15 @@ const Order = new Schema({
         if(this.paymentMethod == PaymentMethod.code)
         return PaymentStatus.da_dat_hang;
         return PaymentStatus.doi_thanh_toan;
+      }
+    },
+    code:{
+      type:String,
+      default:function(){
+        if(this.paymentMethod==PaymentMethod.atm){
+          return makeId(8).toUpperCase()
+        }
+        return null;
       }
     }
   }, {

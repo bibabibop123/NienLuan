@@ -11,6 +11,12 @@ const paymentRouter = require('./payment');
 
 
 function route(app) {
+    app.use((req,res,next)=>{
+        if(req.session.user){
+            req.user = req.session.user;
+        }
+        next();
+    })
     app.use('/courses', coursesRouter);
     app.use('/female', femaleRouter);
     app.use('/couple', coupleRouter);

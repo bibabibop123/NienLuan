@@ -62,9 +62,10 @@ app.set("views", path.join(__dirname, "resources/views"));
 
 const Course = require("./app/models/Course");
 
-route(app);
 
 app.use(bodyParser.json());
+
+route(app);
 
 app.get("/", async (req, res, next) => {
   const array_male = await Course.find({ type: "male" }).limit(8).lean();
