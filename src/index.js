@@ -64,6 +64,13 @@ const Course = require("./app/models/Course");
 
 
 app.use(bodyParser.json());
+app.use((req,res,next)=>{
+  if(req.session.user){
+      req.user = req.session.user;
+      res.locals.user = req.session.user;
+  }
+  next();
+})
 
 route(app);
 
@@ -71,6 +78,7 @@ app.get("/", async (req, res, next) => {
   const array_male = await Course.find({ type: "male" }).limit(8).lean();
   const array_female = await Course.find({ type: "female" }).limit(8).lean();
   const array_couple = await Course.find({ type: "couple" }).limit(4).lean();
+  console.log('res.locals',res.locals.user);
   return res.render("home", {
     male: array_male,
     femaleList: array_female,

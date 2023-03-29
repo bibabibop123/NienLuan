@@ -20,8 +20,14 @@
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a class="dropdown-item" href="/login/">Đăng Nhập</a>
+          {{#unless user}}
+            <a class="dropdown-item" href="/login/">Đăng Nhập</a>
             <div class="dropdown-divider"></div>
+          {{/unless}}
+          {{#if user}}
+            <a class="dropdown-item" href="/logout/">Hello : {{user.lastName}}</a>
+            <div class="dropdown-divider"></div>
+          {{/if}}
           <a class="dropdown-item" href="/courses/">Đồng Hồ Nam</a>
             <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/female/">Đồng Hồ Nữ</a>
@@ -31,6 +37,11 @@
           <a class="dropdown-item" href="#">Phụ Kiện</a>
             <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/cart/">Giỏ Hàng</a>
+          <div class="dropdown-divider"></div>
+          {{#if user}}
+            <a class="dropdown-item" href="/logout/">Đăng Xuất</a>
+            <div class="dropdown-divider"></div>
+          {{/if}}
         </div>
       </div> 
     </div>
