@@ -2,7 +2,7 @@ const Course = require('../models/Course');
 
 class CoursesController {
     async male ( req, res, next) {
-        const array_male = await Course.find({type:"male"}).limit(20).lean();
+        const array_male = await Course.find({type:"male"}).limit(50).lean();
         return res.render('courses', {male:array_male});
     }
     

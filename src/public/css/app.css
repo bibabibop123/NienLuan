@@ -131,7 +131,8 @@
   background-color: #a6a6a6 !important; }
 
 .title {
-  margin-top: 50px !important; }
+  margin-top: 50px !important;
+  padding: 0; }
 
 .logo {
   max-width: 65%;
@@ -154,7 +155,7 @@
   font-size: 32px;
   font-weight: bold;
   line-height: 32px;
-  margin-bottom: 16px;
+  margin-bottom: -35px;
   padding-bottom: 25px;
   position: relative;
   text-align: center;
@@ -602,5 +603,21 @@ table {
   margin-bottom: 30px;
   margin-left: 30px; }
 
-input[type=range] {
-  width: 30% !important; }
+.filter {
+  width: 100%;
+  background-color: #DDDDDD;
+  height: 50px; }
+  .filter form {
+    padding-top: 8px;
+    padding-left: 10px; }
+
+#cars {
+  height: 25px;
+  margin-left: 10px; }
+
+.sm-filter {
+  margin-left: 5px; }
+
+.brand-fliter {
+  margin-left: 15px;
+  padding-top: 5px; }
