@@ -1,14 +1,27 @@
 .input-group {
-  width: 60% !important;
-  float: left;
+  display: flex !important;
+  align-items: center !important;
+
+  .form-control {
+    width: 60% !important;
+    border-radius: 0 !important;
+    margin-right: 0px;
+    border-right: 0px;
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+  }
 
   button {
     background-color: white !important;
     color: black !important;
-    float: left;
+    height: 34px !important;
+    border-radius: 0 !important;
+    margin-bottom: 2px;
+    border-left: 0px;
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
   }
 }
-
 .header-right {
   text-decoration: none;
   font-size: 20px;
@@ -810,7 +823,9 @@ table {
   padding-top: 5px;
 }
 
-
+.card-img-top {
+  border-radius: 5px !important;
+}
 
 
 
