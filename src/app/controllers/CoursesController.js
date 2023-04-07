@@ -2,7 +2,12 @@ const Course = require('../models/Course');
 
 class CoursesController {
     async male ( req, res, next) {
-        const array_male = await Course.find({type:"male"}).limit(50).lean();
+        const {brand} = req.query;
+        const query = {type:"male"};
+        if(brand && brand.length >0){
+            query['brand']=brand;
+        }
+        const array_male = await Course.find(query).limit(50).lean();
         return res.render('courses', {male:array_male});
     }
     
