@@ -827,6 +827,44 @@ table {
   border-radius: 5px !important;
 }
 
+.order-title {
+  font-size: 15px;
+  color: black;
+}
+.tbl-order {
+  width: 90% !important;
+  margin-left: 5% !important;
+  height: 300px !important;
+  
+  .order-stt{
+    width: 10%;
+  }
+
+  .order-name {
+    width: 30%;
+  }
+
+  .order-number {
+    width: 15%;
+  }
+
+  .order-total {
+    width: 15%;
+  }
+
+  .order-status {
+    width: 15%;
+  }
+  td {
+    text-align: center;
+    padding: auto;
+  }
+
+  .order-confirm {
+    font-style: italic !important;
+    color: #6699FF;
+  }
+}
 
 
 

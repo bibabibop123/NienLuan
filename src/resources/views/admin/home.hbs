@@ -10,11 +10,12 @@
           <svg width="118" height="46" alt="CoreUI Logo">
             <use xlink:href="assets/brand/coreui.svg#full"></use>
           </svg></a>
-        <ul class="header-nav d-none d-md-flex">
+        {{!-- <ul class="header-nav d-none d-md-flex">
           <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-        </ul>
+        </ul> --}}
+          <p class="admin-header">Bạn có toàn quyền ở trang này</p>
         <ul class="header-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#">
               <svg class="icon icon-lg">
@@ -79,7 +80,7 @@
           </li>
         </ul>
       </div>
-      <div class="header-divider"></div>
+      {{!-- <div class="header-divider"></div>
       <div class="container-fluid">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb my-0 ms-2">
@@ -92,54 +93,55 @@
             <li class="breadcrumb-item active"><span>Colors</span></li>
           </ol>
         </nav>
-      </div>
+      </div> --}}
     </header>
-    <div class="body flex-grow-1 px-3">
-      <div class="container-lg">
-        <div class="card mb-4">
-          <div class="card-header"> Theme colors</div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-                <div class="bg-primary theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-                <h6>Brand Primary Color</h6>
-              </div>
-              <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-                <div class="bg-secondary theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-                <h6>Brand Secondary Color</h6>
-              </div>
-              <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-                <div class="bg-success theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-                <h6>Brand Success Color</h6>
-              </div>
-              <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-                <div class="bg-danger theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-                <h6>Brand Danger Color</h6>
-              </div>
-              <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-                <div class="bg-warning theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-                <h6>Brand Warning Color</h6>
-              </div>
-              <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-                <div class="bg-info theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-                <h6>Brand Info Color</h6>
-              </div>
-              <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-                <div class="bg-light theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-                <h6>Brand Light Color</h6>
-              </div>
-              <div class="col-xl-2 col-md-3 col-sm-4 col-6 mb-4">
-                <div class="bg-dark theme-color w-75 rounded mb-2" style="padding-top:75%"></div>
-                <h6>Brand Dark Color</h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <div><a href="https://coreui.io">CoreUI </a><a href="https://coreui.io">Bootstrap Admin Template</a> © 2022
-        creativeLabs.</div>
-      <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/docs/">CoreUI UI Components</a></div>
-    </footer>
+      <p class="title-order">Đơn hàng chờ xác nhận</p>
+      <table class="tbl-order table table-striped">
+          <thead>
+              <tr>
+              <th class="name-product">Tên sản phẩm</th>
+              <th class="image-product">hình ảnh</th>
+              <th class="total-product">Giá</th>
+              <th class="type-product">Loại</th>
+              <th class="detail-product">Chi tiết</th>
+              <th class="brand-product">Thương hiệu</th>
+              <th class="edit-product">sửa</th>
+              </tr>
+          </thead>
+          <tbody>
+              {{!-- <tr class="product">
+                  <td class="product-name">CITIZEN AU1080-20A ECO-DRIVE</td>
+                  <td>
+                    <img src="http://mauweb.monamedia.net/dongho/wp-content/uploads/2018/03/dong-ho-citizen-au1080-20a-nam-eco-drive-day-vai-600x600-300x300.jpg" alt="" class="product-image">
+                  </td>
+                  <td>5.000.000</td>
+                  <td>
+                    <select class="form-select" id="sel1" name="sellist1">
+                      <option>male</option>
+                      <option>female</option>
+                    </select>
+                  </td>
+                  <td class="product-detail">Đồng hồ nam Citizen AU1080-20A nổi bật Pin sử dụng công nghệ hiện đại Eco-Drive (Năng Lượng Ánh Sáng), với thiết kế theo phong cách thời trang với dây đeo chất liệu bằng vải tông màu kem trẻ trung</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+              </tr> --}}
+              {{#each courses}}
+                <tr class="product">
+                    <td class="product-name">{{this.name_content}}</td>
+                    <td class="product-image">{{this.img}}</td>
+                    <td>{{this.total}}</td>
+                    <td>{{this.type}}</td>
+                    <td>{{this.detail}}</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>
+                        <a href="/courses/detail/{{this._id}}">Sửa</a>
+                    </td>
+                    <td>
+                        <a href="" data-toggle="modal" data-id="{{this._id}}" data-target="#delete">Xóa</a>
+                    </td>
+                </tr>
+              {{/each}}
+          </tbody>
+      </table>
   </div>

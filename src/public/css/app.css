@@ -636,3 +636,28 @@ table {
 
 .card-img-top {
   border-radius: 5px !important; }
+
+.order-title {
+  font-size: 15px;
+  color: black; }
+
+.tbl-order {
+  width: 90% !important;
+  margin-left: 5% !important;
+  height: 300px !important; }
+  .tbl-order .order-stt {
+    width: 10%; }
+  .tbl-order .order-name {
+    width: 30%; }
+  .tbl-order .order-number {
+    width: 15%; }
+  .tbl-order .order-total {
+    width: 15%; }
+  .tbl-order .order-status {
+    width: 15%; }
+  .tbl-order td {
+    text-align: center;
+    padding: auto; }
+  .tbl-order .order-confirm {
+    font-style: italic !important;
+    color: #6699FF; }
