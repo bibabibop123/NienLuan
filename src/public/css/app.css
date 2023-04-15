@@ -1,8 +1,12 @@
 .input-group {
   display: flex !important;
-  align-items: center !important; }
+  align-items: center !important;
+  width: 100%; }
+  .input-group form {
+    width: 100%;
+    margin-left: 30px; }
   .input-group .form-control {
-    width: 60% !important;
+    width: 80% !important;
     border-radius: 0 !important;
     margin-right: 0px;
     border-right: 0px;
@@ -13,7 +17,7 @@
     color: black !important;
     height: 34px !important;
     border-radius: 0 !important;
-    margin-bottom: 2px;
+    margin-bottom: 6px;
     border-left: 0px;
     border-top-right-radius: 10px !important;
     border-bottom-right-radius: 10px !important; }
@@ -661,3 +665,29 @@ table {
   .tbl-order .order-confirm {
     font-style: italic !important;
     color: #6699FF; }
+
+.user {
+  background-color: white; }
+  .user .form-user {
+    margin-left: 10%; }
+  .user h3 {
+    text-align: center;
+    font-weight: bold; }
+  .user .title-user {
+    text-align: center !important;
+    margin-top: -20px;
+    margin-bottom: 30px; }
+  .user .change-pass {
+    margin-top: 30px;
+    font-style: italic; }
+
+.change-password {
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 100px; }
+  .change-password p {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 25px; }
+  .change-password .form-check-label {
+    margin-left: 25px; }

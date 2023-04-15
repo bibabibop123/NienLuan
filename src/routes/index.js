@@ -10,6 +10,8 @@ const paymentRouter = require('./payment');
 const searchRouter = require('./search');
 const adminRouter = require('./admin');
 const orderRouter = require('./order');
+const userRouter = require('./user');
+const changeRouter = require('./change-password');
 // const editRouter = require('./edit');
 
 
@@ -26,6 +28,8 @@ function route(app) {
     app.use('/search', searchRouter);
     app.use('/admin',adminRouter);
     app.use('/order',orderRouter);
+    app.use('/user',userRouter);
+    app.use('/change-password',changeRouter);
     // app.use('/update', updateRouter);
     // app.use('/edit', editRouter);
     // app.use('/', siteRouter)

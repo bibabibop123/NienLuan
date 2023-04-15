@@ -14223,5 +14223,15 @@ html:not([dir=rtl]) .wrapper {
     margin-left: 40%;
   }
 
+  .detai-order-status {
+    text-decoration: none;
+    font-style: italic;
+  }
+
+  main {
+    margin-bottom: 50px !important;
+    padding: 0%;
+  }
+
 
 /*# sourceMappingURL=style.css.map */

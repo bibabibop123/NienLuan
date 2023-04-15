@@ -45,7 +45,7 @@ class PaymentController {
             req.flash('message', 'Quét QR để thanh toán !!!');
             return res.redirect(`/payment/confirm/${order.code}`);
         }
-        req.flash('message', 'Thành Công. Chúng tôi sẽ liên hệ sớm cho các bạn !!!');
+        req.flash('message', 'Thành Công. Chúng tôi sẽ thông báo qua email cho bạn sớm nhất !!!');
         return res.redirect('/');
     }
 
