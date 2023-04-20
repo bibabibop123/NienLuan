@@ -14188,6 +14188,33 @@ html:not([dir=rtl]) .wrapper {
     line-height: 1.6rem;
   }
 
+  .filter-search {
+    width: 30%;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    float: left;
+  }
+
+  .select-type {
+    margin-left: 2%;
+    width: 10%;
+    height: 31px;
+  }
+
+  .filter-btn {
+    width: 7%;
+    height: 31px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+  }
+
+  .stt {
+    width: 5%;
+  }
+
   .brand-product {
     width: 12.5%;
     text-align: center;

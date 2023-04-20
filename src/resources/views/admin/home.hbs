@@ -96,9 +96,29 @@
       </div> --}}
     </header>
       <p class="title-order">Sản phẩm</p>
+      <div>
+        <input type="text" class="filter-search" placeholder="tìm sản phẩm">
+
+        <select class="select-type">
+          <option value="male">male</option>
+          <option value="female">female</option>
+          <option value="couple">couple</option>
+        </select>
+
+        <select class="select-type">
+          <option value="olym">olym</option>
+          <option value="casio">casio</option>
+          <option value="citizen">citizen</option>
+          <option value="tissot">tissot</option>
+          <option value="hublot">hublot</option>
+        </select>
+
+        <button class="filter-btn">Tìm</button>
+      </div>
       <table class="tbl-order table table-striped">
           <thead>
               <tr>
+              <th class="stt">STT</th>
               <th class="name-product">Tên sản phẩm</th>
               <th class="image-product">hình ảnh</th>
               <th class="total-product">Giá</th>
@@ -127,21 +147,28 @@
               </tr> --}}
               {{#each products}}
                 <tr class="product">
+                    <td>1</td>
                     <td class="product-name">{{this.name_content}}</td>
-                    <td class="product-image">{{this.img}}</td>
+                    <td class="product-image"><img src="{{this.img}}" class="product-image"></td>
                     <td>{{this.total}}</td>
                     <td>{{this.type}}</td>
-                    <td>{{this.detail}}</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
+                    <td class="product-detail">{{this.detail}}</td>
+                    <td>{{this.brand}}</td>
                     <td>
-                        <a href="/courses/detail/{{this._id}}">Sửa</a>
-                    </td>
-                    <td>
+                        <a href="/admin/product/detail/{{this._id}}">Sửa</a>
                         <a href="" data-toggle="modal" data-id="{{this._id}}" data-target="#delete">Xóa</a>
                     </td>
                 </tr>
               {{/each}}
           </tbody>
       </table>
+                    <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+              </nav>
   </div>

@@ -54,6 +54,7 @@ app.engine(
     helpers: {
       sum: (a, b) => a + b,
       multiply:(a,b)=>a*b,
+      equal: (a,b)=> a ==b,
     },
   })
 );
