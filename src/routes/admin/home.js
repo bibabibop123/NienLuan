@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const adminHomeController = require('./../../app/controllers/AdminHomeController');
 
-router.get('/', (req,res)=>{
-    console.log('login');
-    res.render('admin/home',{layout:'admin'});
-})
+router.get('/', adminHomeController.home);
 module.exports = router;
