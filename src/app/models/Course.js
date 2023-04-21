@@ -6,6 +6,7 @@ const Course = new Schema({
     total: { type: String},
     img: { type: String},
     type: { type: String},
+    brand: {type: String},
     detail: { type: String},
   }, {
     timestamps: true,
