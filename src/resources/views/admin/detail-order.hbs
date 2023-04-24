@@ -41,39 +41,32 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="kh_ten">Họ tên</label>
-                                <input type="text" class="form-control" name="name" id="kh_ten" value="{{user.firstName}} {{user.lastName}}"
+                                <input type="text" class="form-control" name="name" id="kh_ten" value="{{order.name}}"
                                     placeholder="Họ và tên">
                             </div>
                             <div class="col-md-12">
                                 <label for="address">Địa chỉ</label>
                                 <input type="text" class="form-control" name="address" id="address"
-                                    placeholder="Số nhà - Đường - Huyện/Xã -Thành Phố" value="{{user.address}}">
+                                    placeholder="Số nhà - Đường - Huyện/Xã -Thành Phố" value="{{order.address}}">
                             </div>
                             <div class="col-md-12">
                                 <label for="phone">Điện thoại</label>
                                 <input type="text" class="form-control" name="phone" id="phone"
-                                    placeholder="012345678" value="{{user.phoneNumber}}">
+                                    placeholder="012345678" value="{{order.phoneNumber}}">
                             </div>
                             <div class="col-md-12">
                                 <label for="kh_email">Email</label>
                                 <input type="text" class="form-control" name="email" id="email"
-                                    placeholder="example@ctu.edu.vn" value="{{user.email}}">
+                                    placeholder="example@ctu.edu.vn" value="{{order.email}}">
                             </div>
                         </div>
 
                         <h4 class="mb-3">Hình thức thanh toán</h4>
 
                         <div class="d-block my-3">
-                            <div class="custom-control custom-radio">
-                                <input id="httt-3" name="paymentMethod" type="radio" class="custom-control-input" required=""
-                                    value="cod" checked="true">
-                                <label class="custom-control-label" for="httt-3">Ship COD</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input id="httt-2" name="paymentMethod" type="radio" class="custom-control-input" required=""
-                                    value="atm">
-                                <label class="custom-control-label" for="httt-2">Chuyển khoản</label>
-                            </div>
+                                 <label for="kh_email">Email</label>
+                                <input type="text" class="form-control" name="email" id="email"
+                                    placeholder="example@ctu.edu.vn" value="{{order.paymentMethod}}">
                             
                         </div>
                         <hr class="mb-4">

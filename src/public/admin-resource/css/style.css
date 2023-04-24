@@ -14260,5 +14260,10 @@ html:not([dir=rtl]) .wrapper {
     padding: 0%;
   }
 
+  .create-product {
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+
 
 /*# sourceMappingURL=style.css.map */

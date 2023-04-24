@@ -8,7 +8,7 @@ const orderCancelRouter = require('./order-cancel');
 const createAdminRouter = require('./create-admin');
 const updateAdminRouter = require('./update-admin');
 const detailorderAdminRouter = require('./detail-order');
-router.use('/',homeRouter);
+
 router.use('/login',loginRouter);
 router.use('/order',orderRouter);
 router.use('/order-confirm',orderConfirmRouter);
@@ -16,4 +16,5 @@ router.use('/order-cancel',orderCancelRouter);
 router.use('/create-admin',createAdminRouter);
 router.use('/update-admin',updateAdminRouter);
 router.use('/detail-order',detailorderAdminRouter);
+router.use('/',homeRouter);
 module.exports = router;
