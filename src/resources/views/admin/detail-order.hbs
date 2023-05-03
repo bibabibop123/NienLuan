@@ -2,9 +2,6 @@
     <main role="main" class="detail-order">
         <!-- Block content - Đục lỗ trên giao diện bố cục chung, đặt tên là `content` -->
         <div class="container">
-            <form class="needs-validation" name="frmthanhtoan" method="post"
-                action="/payment">
-
                 <div class="py-5 text-center">
                     <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
                     <h2>Chi Tiết Đơn Hàng</h2>
@@ -18,7 +15,7 @@
                             <span class="badge badge-secondary badge-pill">2</span>
                         </h4>
                         <ul class="list-group mb-3">
-                            {{#each cart}}
+                            {{#each order.products}}
                             <li class="list-group-item d-flex justify-content-between lh-condensed">
                                 <div>
                                     <h6 class="my-0">{{this.name}}</h6>
@@ -29,11 +26,9 @@
                             {{/each}}
                             <li class="list-group-item d-flex justify-content-between">
                                 <span>Tổng thành tiền</span>
-                                <strong>{{total}}</strong>
+                                <strong>{{order.total}}</strong>
                             </li>
                         </ul>
-
-
                     </div>
                     <div class="col-md-8 order-md-1">
                         <h4 class="mb-3">Thông tin khách hàng</h4>
@@ -62,7 +57,11 @@
                         </div>
 
                         <h4 class="mb-3">Hình thức thanh toán</h4>
-
+                        <div class="col-md-12">
+                            <label for="kh_email">Trang Thai</label>
+                            <input type="text" class="form-control" name="email" id="email"
+                                placeholder="example@ctu.edu.vn" value="{{paymentStatusConverString order.status}}">
+                        </div>
                         <div class="d-block my-3">
                                  <label for="kh_email">Email</label>
                                 <input type="text" class="form-control" name="email" id="email"
@@ -70,12 +69,14 @@
                             
                         </div>
                         <hr class="mb-4">
-                    <button class="btn btn-primary">xác nhận</button>
-                    <button class="btn btn-danger">Hủy</button>
+                    {{#if (different order.status 'xac_nhan')}}
+                         <a href="/admin/detail-order/confirm/{{order._id}}"><button class="btn btn-primary">xác nhận</button></a>
+                    {{/if}}
+                    {{#if (different order.status 'da_huy')}}
+                         <a href="/admin/detail-order/cancel/{{order._id}}"><button class="btn btn-danger">Hủy</button></a>
+                    {{/if}}
                     </div>
                 </div>
-            </form>
-
         </div>
         <!-- End block content -->
     </main>
