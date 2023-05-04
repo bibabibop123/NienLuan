@@ -11,15 +11,17 @@
             </tr>
         </thead>
         <tbody>
+            {{#each orders}}
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">{{@index}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.products.length}}</td>
+                <td>{{this.total}}</td>
                 <td class="order-confirm">
-                    Đã xác nhận
-                </td>
+                        Đã xác nhận
+                    </td>
             </tr>
+            {{/each}}
         </tbody>
     </table>
 </div>

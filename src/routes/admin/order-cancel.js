@@ -1,7 +1,6 @@
 const express = require('express');
+const AdminCancelController = require('../../app/controllers/AdminCancelController');
 const router = express.Router();
 
-router.get('/', (req,res)=>{
-    res.render('admin/order-cancel',{layout:'admin'});
-})
+router.get('/', AdminCancelController.adminCancel)
 module.exports = router;

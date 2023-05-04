@@ -1,7 +1,6 @@
 const express = require('express');
+const AdminConfirmController = require('../../app/controllers/AdminConfirmController');
 const router = express.Router();
 
-router.get('/', (req,res)=>{
-    res.render('admin/order-confirm',{layout:'admin'});
-})
+router.get('/', AdminConfirmController.adminConfirm);
 module.exports = router;
