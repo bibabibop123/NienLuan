@@ -9,14 +9,34 @@
     </tr>
   </thead>
   <tbody>
+    {{#each orders}}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td class="order-confirm">
-          Chờ xác nhận
-      </td>
+      <th scope="row">{{@index}}</th>
+      <td>{{this.products.[0].name}}</td>
+      <td>{{this.products.[0].quality}}</td>
+      <td>{{this.total}}</td>
+      {{#if (equal this.status 'da_dat_hang')}}
+        <td class="order-confirm">
+            Chờ xác nhận
+        </td>
+      {{/if}}
+      {{#if (equal this.status 'doi_thanh_toan')}}
+        <td class="order-confirm">
+            Đợi thanh toán
+        </td>
+      {{/if}}
+      {{#if (equal this.status 'da_huy')}}
+        <td class="order-cancel">
+            Đã hủy
+        </td>
+      {{/if}}
+      {{#if (equal this.status 'da_xac_nhan')}}
+        <td class="order-confirm">
+            Đã xác nhận
+        </td>
+      {{/if}}
+      
+    {{/each}}
     </tr>
   </tbody>
 </table>

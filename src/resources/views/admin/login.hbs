@@ -59,6 +59,7 @@
   <body>
     <div class="bg-light min-vh-100 d-flex flex-row align-items-center">
       <div class="container">
+        <form method="post" action="/admin/login">
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="card-group d-block d-md-flex row">
@@ -70,17 +71,17 @@
                       <svg class="icon">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
                       </svg></span>
-                    <input class="form-control" type="text" placeholder="Username">
+                    <input class="form-control" type="text" placeholder="Username" name="username">
                   </div>
                   <div class="input-group mb-4"><span class="input-group-text">
                       <svg class="icon">
                         <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
                       </svg></span>
-                    <input class="form-control" type="password" placeholder="Password">
+                    <input class="form-control" type="password" placeholder="Password" name="password">
                   </div>
                   <div class="row">
                     <div class="col-6">
-                      <button class="btn btn-primary px-4" type="button">Login</button>
+                      <button class="btn btn-primary px-4" type="submit">Login</button>
                     </div>
                     <div class="col-6 text-end">
                       <button class="btn btn-link px-0" type="button">Forgot password?</button>
@@ -99,6 +100,7 @@
               </div>
             </div>
           </div>
+          </form>
         </div>
       </div>
     </div>

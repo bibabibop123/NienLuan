@@ -1,8 +1,9 @@
 const Course = require('../models/Course');
-
+const Order = require('./../models/Order');
 class OrderController {
     async order ( req, res, next) {
-        return res.render('order');
+        const orders = await Order.find({user:req.user._id}).lean();
+        return res.render('order',{orders});
     }
 }
 
