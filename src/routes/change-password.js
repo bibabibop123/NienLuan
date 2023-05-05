@@ -4,5 +4,6 @@ const router = express.Router();
 
 const changepassController = require('../app/controllers/ChangePassController');
 
-router.use('/',changepassController.changePass)
+router.get('/',changepassController.changePass);
+router.post('/',changepassController.changePassAction);
 module.exports = router;
