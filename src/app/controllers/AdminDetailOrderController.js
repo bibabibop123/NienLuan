@@ -11,11 +11,11 @@ class AdminDetailOrderController {
     }
     async adminAcceptOrder(req,res,next){
         await Order.findByIdAndUpdate(req.params.id,{$set:{status:PaymentStatus.xac_nhan}});
-        return res.redirect('/admin/detail-order/'+req.params.id);
+        return res.redirect('/admin/order/');
     }
     async adminCancelOrder(req,res,next){
         await Order.findByIdAndUpdate(req.params.id,{$set:{status:PaymentStatus.da_huy}});
-        return res.redirect('/admin/detail-order/'+req.params.id);
+        return res.redirect('/admin/order/');
     }
 }
 
