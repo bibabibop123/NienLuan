@@ -347,9 +347,13 @@ p{
   float: left;
 }
 
+.image-cart{
+  border-radius: 50px;
+}
+
 footer {
     background-color: black;
-    height: 120px;
+    height: 160px;
     font-size: 17px;
 }
 
@@ -761,7 +765,10 @@ table {
     .cart-img{
       width: 18%;
       img{
-        height: 100%;
+        height: 100px;
+        width: 100px;
+        margin-left: 70px;
+        border-radius: 50px;
       }
     }
     .cart-detail{

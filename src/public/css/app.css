@@ -290,9 +290,12 @@ p {
   height: 60px;
   float: left; }
 
+.image-cart {
+  border-radius: 50px; }
+
 footer {
   background-color: black;
-  height: 120px;
+  height: 160px;
   font-size: 17px; }
 
 footer .row {
@@ -590,7 +593,10 @@ table {
     table .cart-product .cart-img {
       width: 18%; }
       table .cart-product .cart-img img {
-        height: 100%; }
+        height: 100px;
+        width: 100px;
+        margin-left: 70px;
+        border-radius: 50px; }
     table .cart-product .cart-detail {
       width: 30%; }
     table .cart-product .cart-price {
