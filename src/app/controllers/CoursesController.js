@@ -2,12 +2,22 @@ const Course = require('../models/Course');
 
 class CoursesController {
     async male ( req, res, next) {
-        const {brand} = req.query;
+        const {brand,price} = req.query;
         const query = {type:"male"};
+        
         if(brand && brand.length >0){
             query['brand']=brand;
         }
-        const array_male = await Course.find(query).limit(50).lean();
+        const sort = {};
+        if(price){
+            if(price=='asc'){
+                sort['total']= 1;
+            }
+            else sort['total']= -1;
+            
+        }
+        
+        const array_male = await Course.find(query).sort(sort).limit(50).lean();
         return res.render('courses', {male:array_male});
     }
     
