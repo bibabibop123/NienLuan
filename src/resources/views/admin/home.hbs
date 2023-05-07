@@ -150,7 +150,7 @@
               </tr> --}}
               {{#each products}}
                 <tr class="product">
-                    <td>1</td>
+                    <th scope="row">{{@index}}</th>
                     <td class="product-name">{{this.name_content}}</td>
                     <td class="product-image"><img src="{{this.img}}" class="product-image"></td>
                     <td>{{this.total}}</td>
