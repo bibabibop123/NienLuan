@@ -813,6 +813,7 @@ table {
   margin-left: 30px;
 }
 
+
 .filter{
   width: 100%;
   background-color: #DDDDDD;
@@ -821,6 +822,14 @@ table {
   form {
     padding-top: 8px;
     padding-left: 10px;
+  }
+
+  .btn-block {
+    width: 50px !important;
+    border: 1px solid;
+    float: right;
+    margin-right: 470px;
+    margin-top: 5px;
   }
 }
 
