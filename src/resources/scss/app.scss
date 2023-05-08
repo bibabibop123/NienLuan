@@ -539,6 +539,16 @@ table {
   }
 }
 
+.order-cancel {
+  color: red;
+  font-style: italic !important;
+}
+
+.order-wait {
+  font-style: italic !important;
+  color: black;
+}
+
 
 .action {
   margin-top: 50px;

@@ -436,6 +436,14 @@ table {
     line-height: 1.3;
     font-size: .9em; }
 
+.order-cancel {
+  color: red;
+  font-style: italic !important; }
+
+.order-wait {
+  font-style: italic !important;
+  color: black; }
+
 .action {
   margin-top: 50px;
   margin-bottom: 50px; }
